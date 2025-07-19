@@ -42,9 +42,6 @@ jobs:
 
      - name: Run linter (with debug)
        run: npm run lint -- --debug
-        
-     - name: Run linter
-       run: npm run lint
 
   deploy:
     runs-on: ubuntu-latest
