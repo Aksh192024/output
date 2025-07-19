@@ -46,7 +46,7 @@ jobs:
         node-version: '18'  
 
      - name: artifacts
-       uses: actions/upload-artifact@v3 ## uploading artifacts ##
+       uses: actions/upload-artifact@v4 ## uploading artifacts ##
        with:
          name: dist files
          path: dist
@@ -75,7 +75,7 @@ jobs:
           node-version: '18'
 
       - name: download artifacts
-        uses: actions/download-artifact@v3  ## downloading artifacts ##
+        uses: actions/download-artifact@v4  ## downloading artifacts ##
         with:
           name: dist files
 
