@@ -79,12 +79,10 @@ jobs:
         with:
           name: dist files
 
-      - outputs:
-        name: dist files
+      - name: dist files
         run: ls ## listing artifacts ##
 
-      - outputs: 
-        name: script output
+      - name: script output
         run: echo " ${{needs.build.outputs.script}} " ## getting the output from build step ##
       
       - name: Install dependencies
