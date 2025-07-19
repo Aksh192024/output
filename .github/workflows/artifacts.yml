@@ -29,13 +29,19 @@ jobs:
    runs-on: ubuntu-latest
    needs: test
    steps:
-     - name: Checkout code
+     - name: Checkout code ## fecting the code ##
        uses: actions/checkout@v3
 
      - name: Set up Node.js
        uses: actions/setup-node@v3
        with:
         node-version: '18'  
+        
+     - name: artifacts
+       uses: actions/upload-artifact@v3 ## uploading artifacts ##
+       with:
+         name: dist files
+         path: dist
      
      - name: Install dependencies
        run: npm ci
@@ -54,6 +60,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
+      - name: download artifacts
+        uses: actions/download-artifact@v3  ## downloading artifacts ##
+        with:
+          name: dist files
+
+      - output:
+        name: dist files
+        run: ls ## listing artifacts ##
       
       - name: Install dependencies
         run: npm ci
