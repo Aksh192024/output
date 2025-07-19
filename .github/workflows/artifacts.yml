@@ -39,6 +39,9 @@ jobs:
      
      - name: Install dependencies
        run: npm ci
+
+     - name: Run linter (with debug)
+       run: npm run lint -- --debug
         
      - name: Run linter
        run: npm run lint
